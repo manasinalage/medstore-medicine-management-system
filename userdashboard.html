@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<!-- Navbar -->
+<div th:insert="fragments/nav :: nav"></div>
+
+<div class="container mt-4">
+
+    <!-- ✅ Logout Button -->
+    <div style="text-align: right; margin-bottom: 15px;">
+        <a th:href="@{/logout}" class="logout-btn">Logout</a>
+    </div>
+	<h2>User Dashboard</h2>
+
+    <h3>Available Medicines</h3>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Company</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="m : ${medicines}">
+                <td th:text="${m.id}"></td>
+                <td th:text="${m.name}"></td>
+                <td th:text="${m.category}"></td>
+                <td th:text="${m.company}"></td>
+                <td th:text="${m.price}"></td>
+                <td th:text="${m.qty}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
