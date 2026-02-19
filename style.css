@@ -1,0 +1,152 @@
+/* ================== GENERAL STYLES ================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* ================== NAVBAR ================== */
+nav, .admin-navbar {
+    background-color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a, .admin-navbar a {
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+nav a:hover, .admin-navbar a:hover {
+    background-color: #34495e;
+    color: #ffcc00;
+}
+
+/* ================== CONTAINER ================== */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffffcc;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ================== TABLES ================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #343a40;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e1e7f0;
+}
+
+/* ================== FORMS ================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input:focus, select:focus {
+    border-color: #2c3e50;
+    outline: none;
+}
+
+/* ================== BUTTONS ================== */
+.btn, button, .btn-container a {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-success, .add-btn { background-color: #28a745; }
+.btn-primary, .edit-btn { background-color: #007bff; }
+.btn-danger, .delete-btn { background-color: #dc3545; }
+.btn-secondary, .cancel-btn, .btn-back { background-color: #6c757d; }
+.btn-warning { background-color: #f39c12; }
+
+.btn-success:hover { background-color: #219150; }
+.btn-primary:hover, .edit-btn:hover { background-color: #0056b3; }
+.btn-danger:hover { background-color: #b02a37; }
+.btn-secondary:hover, .cancel-btn:hover, .btn-back:hover { background-color: #5a6268; }
+.btn-warning:hover { background-color: #d48806; }
+
+/* ================== BUTTON CONTAINERS ================== */
+.btn-container, .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* ================== TABLE ACTION BUTTONS ================== */
+.edit-btn, .delete-btn {
+    padding: 6px 14px;
+    font-size: 14px;
+}
+
+.edit-btn { background-color: #f0ad4e; }
+.edit-btn:hover { background-color: #ec971f; }
+
+.delete-btn { background-color: #d9534f; }
+.delete-btn:hover { background-color: #c9302c; }
