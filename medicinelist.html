@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medicine List</title>
+       <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:insert="fragments/nav :: nav"></div>
+<h2>Medicine List</h2>
+<table border="1" cellpadding="8">
+<tr>
+<th>ID</th><th>Name</th><th>Category</th><th>Company</th><th>Price</th><th>Qty</th><th>Expiry</th>
+</tr>
+<tr th:each="m : ${medicines}">
+    <td th:text="${m.id}"></td>
+    <td th:text="${m.name}"></td>
+    <td th:text="${m.category}"></td>
+    <td th:text="${m.company}"></td>
+    <td th:text="${m.price}"></td>
+    <td th:text="${m.qty}"></td>
+    <td th:text="${m.expiryDate}"></td>
+</tr>
+</table>
+<a th:href="@{/admindashboard}">Back</a>
+</body>
+</html>
