@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update User</title>
+       <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:insert="fragments/nav :: nav"></div>
+<div class="container mt-4">
+    <h2>Update User</h2>
+    <form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+        <input type="hidden" th:field="*{id}">
+        Username: <input type="text" th:field="*{username}" class="form-control"><br>
+        Email: <input type="email" th:field="*{email}" class="form-control"><br>
+        Mobile: <input type="text" th:field="*{mobile}" class="form-control"><br>
+        Age: <input type="number" th:field="*{age}" class="form-control"><br>
+        Password: <input type="password" th:field="*{password}" class="form-control"><br>
+        Role:
+        <select th:field="*{role}" class="form-select">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select><br>
+        <button type="submit" class="btn btn-success">Update</button>
+        <a th:href="@{/viewusers}" class="btn btn-secondary">Back</a>
+    </form>
+</div>
+</body>
+</html>
