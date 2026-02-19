@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add User</title>
+       <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:insert="fragments/nav :: nav"></div>
+<div class="container mt-4">
+    <h2>Add User</h2>
+    <form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+        Username: <input type="text" th:field="*{username}" class="form-control" required><br>
+        Email: <input type="email" th:field="*{email}" class="form-control" required><br>
+        Mobile: <input type="text" th:field="*{mobile}" class="form-control"><br>
+        Age: <input type="number" th:field="*{age}" class="form-control"><br>
+        Password: <input type="password" th:field="*{password}" class="form-control" required><br>
+        Role:
+        <select th:field="*{role}" class="form-select">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select><br>
+          <div style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;">
+            <button type="submit" class="btn btn-success">Save</button>
+            <a th:href="@{/viewusers}" class="btn btn-secondary">Back</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
