@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Medicines</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<!-- Navbar -->
+<div th:insert="fragments/nav :: nav"></div>
+
+<div class="container">
+
+    <h2>All Medicines</h2>
+
+    <!-- Top Center Buttons -->
+    <div class="btn-container">
+        <a th:href="@{/medicines/add}" class="add-btn">Add Medicine</a>
+        <a th:href="@{/admindashboard}" class="cancel-btn">Back</a>
+    </div>
+
+    <!-- Medicine Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Company</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Expiry Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="m : ${medicines}">
+                <td th:text="${m.id}"></td>
+                <td th:text="${m.name}"></td>
+                <td th:text="${m.category}"></td>
+                <td th:text="${m.company}"></td>
+                <td th:text="${m.price}"></td>
+                <td th:text="${m.qty}"></td>
+                <td th:text="${m.expiryDate}"></td>
+
+                <!-- ✅ Edit & Delete Side by Side -->
+                <td>
+                    <div class="action-buttons">
+                        <a th:href="@{/medicines/edit/{id}(id=${m.id})}"
+                           class="edit-btn">
+                            Edit
+                        </a>
+
+                        <a th:href="@{/medicines/delete/{id}(id=${m.id})}"
+                           class="delete-btn"
+                           onclick="return confirm('Are you sure you want to delete this medicine?');">
+                            Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
