@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:insert="fragments/nav :: nav"></div>
+
+<div class="container mt-5">
+    <h2>Login</h2>
+    <p th:text="${message}"></p>
+
+    <form action="#" th:action="@{/login}" method="post">
+        Username: <input type="text" name="username" class="form-control"><br>
+        Password: <input type="password" name="password" class="form-control"><br>
+
+        <!-- Centered buttons -->
+        <div style="display:flex; justify-content:center; gap:10px; margin-top:15px;">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a th:href="@{/}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
