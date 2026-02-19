@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Medicine</title>
+       <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:insert="fragments/nav :: nav"></div>
+<div class="container mt-4">
+    <h2>Add Medicine</h2>
+    <form action="#" th:action="@{/medicines/save}" th:object="${medicine}" method="post">
+        Name: <input type="text" th:field="*{name}" class="form-control"><br>
+        Category: <input type="text" th:field="*{category}" class="form-control"><br>
+        Company: <input type="text" th:field="*{company}" class="form-control"><br>
+        Price: <input type="number" th:field="*{price}" class="form-control"><br>
+        Quantity: <input type="number" th:field="*{qty}" class="form-control"><br>
+        Expiry Date: <input type="date" th:field="*{expiryDate}" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Save</button>
+        <a th:href="@{/medicines/all}" class="btn btn-secondary">Back</a>
+    </form>
+</div>
+</body>
+</html>
